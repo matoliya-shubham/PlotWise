@@ -16,25 +16,27 @@ export default function HeroSection() {
   return (
     <div className="relative h-screen">
       <Image
-        src="/landing-splash.jpg"
+        src={HeroImage}
         alt="PlotWise Hero Section"
         fill
         className="object-cover object-center"
         priority
       />
+      {/* overlay */}
       <div className="absolute inset-0 bg-black opacity-60"></div>
+      {/* content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 text-center w-full"
+        className="absolute top-1/3 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform text-center"
       >
-        <div className="max-w-5xl mx-auto px-16 sm:px-12">
-          <h1 className="text-5xl font-bold text-white mb-4 leading-[1.2]">
+        <div className="mx-auto max-w-5xl px-16 sm:px-12">
+          <h1 className="mb-4 text-5xl leading-[1.2] font-bold text-white">
             Your next chapter starts with the right address, perfectly matched
             to your needs.
           </h1>
-          <p className="text-xl text-white mb-8">
+          <p className="mb-8 text-xl text-white">
             Discover your ideal property effortlessly with our powerful,
             customizable filters.
           </p>
@@ -45,11 +47,11 @@ export default function HeroSection() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by city, neighborhood or address"
-              className="w-full max-w-lg rounded-none rounded-l-xl border-none bg-white h-12 placeholder:text-secondary-300 placeholder:opacity-70"
+              className="placeholder:text-secondary-300 h-12 w-full max-w-lg rounded-none rounded-l-xl border-none bg-white placeholder:opacity-70"
             />
             <Button
               onClick={handleLocationSearch}
-              className="bg-secondary-500 text-white rounded-none rounded-r-xl border-none hover:bg-secondary-600 h-12"
+              className="bg-secondary-500 hover:bg-secondary-600 h-12 rounded-none rounded-r-xl border-none text-white"
             >
               Search
             </Button>
