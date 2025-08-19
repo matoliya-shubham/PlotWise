@@ -1,9 +1,13 @@
-import React from "react";
+import Navbar from "@/components/Navbar";
+import Landing from "./(nondashboard)/landing/page";
 
 export default function Home() {
   return (
-    <div>
-      <h1>PlotWise</h1>
+    <div className="h-full w-full">
+      <Navbar />
+      <main className={`flex h-full w-full flex-col`}>
+        <Landing />
+      </main>
     </div>
   );
 }
