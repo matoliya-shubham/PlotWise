@@ -7,7 +7,10 @@
   "scripts": {
     "build": "rimraf dist && pnpm exec tsc",
     "start": "pnpm run build && node dist/index.js",
-    "dev": "pnpm run build && concurrently \"pnpm exec tsc -w\" \"nodemon --exec tsx src/index.ts\""
+    "dev": "pnpm run build && concurrently \"pnpm exec tsc -w\" \"nodemon --exec tsx src/index.ts\"",
+    "seed": "tsx prisma/seed.ts",
+    "prisma:generate": "prisma generate",
+    "postprisma:generate": "shx cp -r prisma/generated/client/index.d.ts ../client/types/prismaTypes.d.ts"
   },
   "keywords": [],
   "author": "",
